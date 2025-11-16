@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sphinx - Responsive Product Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <div class="d-flex align-items-center">
+            <!-- <div class="logo-placeholder me-2"> -->
+            <img
+              src="sphinx_img/sphinx-logo.png"
+              alt="Sphinx Logo"
+              width="35"
+              height="35"
+              class="me-2"
+            />
+            <!-- </div> -->
+            <a class="navbar-brand" href="#">Sphinx</a>
+          </div>
+
+          <!-- Mobile sidebar toggle button -->
+          <button
+            class="navbar-toggler d-md-none"
+            type="button"
+            id="mobileSidebarToggle"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Desktop navigation -->
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+            </ul>
+
+            <!-- Search form - shown on all screens -->
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+              />
+              <button class="btn btn-outline-primary" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="text-white mb-0">
+          <a href="products.html">Our Products</a>
+        </h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          id="closeSidebar"
+        ></button>
+      </div>
+
+      <ul class="list-unstyled ps-0 mb-0">
+        <li class="mb-1">
+          <button
+            class="btn-toggle-custom collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobile-anchors"
+          >
+            <i class="fas fa-chevron-right"></i>
+            Anchors
+          </button>
+          <div class="collapse" id="mobile-anchors">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a
+                  href="anchors.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >Drop In Anchor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="anchors.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >Wedge Anchor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="anchors.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >Toggle Anchor</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="mb-1">
+          <button
+            class="btn-toggle-custom collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobile-nuts"
+          >
+            <i class="fas fa-chevron-right"></i>
+            Nuts
+          </button>
+          <div class="collapse" id="mobile-nuts">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a href="#" class="d-inline-flex text-decoration-none rounded"
+                  >Fork Nut</a
+                >
+              </li>
+              <li>
+                <a
+                  href="nuts.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >Rivet Nut</a
+                >
+              </li>
+              <li>
+                <a
+                  href="nuts.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >Insert Nut</a
+                >
+              </li>
+              <li>
+                <a
+                  href="nuts.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >DIN 934</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="mb-1">
+          <button
+            class="btn-toggle-custom collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobile-washers"
+          >
+            <i class="fas fa-chevron-right"></i>
+            Washers
+          </button>
+          <div class="collapse" id="mobile-washers">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a
+                  href="washers.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >DIN 125</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="mb-1">
+          <button
+            class="btn-toggle-custom collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobile-wood-screws"
+          >
+            <i class="fas fa-chevron-right"></i>
+            Wood Screws
+          </button>
+          <div class="collapse" id="mobile-wood-screws">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a
+                  href="woodscrews.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >DIN 571</a
+                >
+              </li>
+              <li>
+                <a
+                  href="woodscrews.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >Dowel Wood Screw</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="mb-1">
+          <button
+            class="btn-toggle-custom collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobile-drilling"
+          >
+            <i class="fas fa-chevron-right"></i>
+            Drywall Screws
+          </button>
+          <div class="collapse" id="mobile-drilling">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a
+                  href="drywallscrews.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >Coarse Thread Drywall Screws</a
+                >
+              </li>
+              <li>
+                <a
+                  href="drywallscrews.html"
+                  class="d-inline-flex text-decoration-none rounded"
+                  >Fine Thread Drywall Screws</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="mb-1">
+          <button
+            class="btn-toggle-custom collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobile-machine"
+          >
+            <i class="fas fa-chevron-right"></i>
+            Machine Screws
+          </button>
+          <div class="collapse" id="mobile-machine">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a href="#" class="d-inline-flex text-decoration-none rounded"
+                  >DIN 965</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="mb-1">
+          <button
+            class="btn-toggle-custom collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobile-clamp"
+          >
+            <i class="fas fa-chevron-right"></i>
+            Wire rope Clamp
+          </button>
+          <div class="collapse" id="mobile-clamp">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a href="#" class="d-inline-flex text-decoration-none rounded"
+                  >Wire Rope Clamp</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-divider"></li>
+
+        <li class="mb-1">
+          <button
+            class="btn-toggle-custom collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobile-contact"
+          >
+            <i class="fas fa-chevron-right"></i>
+            <a href="index.html#contact">Contact Us</a>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Desktop Sidebar - hidden on mobile -->
+        <div class="col-md-auto p-0 custom-sidebar-wrapper">
+          <div class="custom-sidebar d-flex flex-column">
+            <a
+              href="products.html"
+              class="sidebar-header d-flex align-items-center mb-3 text-decoration-none"
+            >
+              <span class="fs-5 fw-semibold">Our Products</span>
+            </a>
+
+            <ul class="list-unstyled ps-0">
+              <li class="mb-1">
+                <button
+                  class="btn-toggle-custom collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#desktop-anchors"
+                >
+                  <i class="fas fa-chevron-right"></i>
+                  Anchors
+                </button>
+                <div class="collapse" id="desktop-anchors">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li>
+                      <a
+                        href="anchors.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >Drop In Anchor</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="anchors.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >Wedge Anchor</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="anchors.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >Toggle Anchor</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="mb-1">
+                <button
+                  class="btn-toggle-custom collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#desktop-nuts"
+                >
+                  <i class="fas fa-chevron-right"></i>
+                  Nuts
+                </button>
+                <div class="collapse" id="desktop-nuts">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li>
+                      <a
+                        href="nuts.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >Fork Nut</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="nuts.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >Rivet Nut</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="nuts.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >Insert Nut</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="nuts.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >DIN 934</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="mb-1">
+                <button
+                  class="btn-toggle-custom collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#desktop-washers"
+                >
+                  <i class="fas fa-chevron-right"></i>
+                  Washers
+                </button>
+                <div class="collapse" id="desktop-washers">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li>
+                      <a
+                        href="washers.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >DIN 125</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="mb-1">
+                <button
+                  class="btn-toggle-custom collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#desktop-wood-screws"
+                >
+                  <i class="fas fa-chevron-right"></i>
+                  Wood Screws
+                </button>
+                <div class="collapse" id="desktop-wood-screws">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li>
+                      <a
+                        href="woodscrews.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >DIN 571</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="woodscrews.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >Dowel Wood Screw</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="mb-1">
+                <button
+                  class="btn-toggle-custom collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#desktop-drilling"
+                >
+                  <i class="fas fa-chevron-right"></i>
+                  Drywall Screws
+                </button>
+                <div class="collapse" id="desktop-drilling">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li>
+                      <a
+                        href="drywallscrews.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >Coarse Thread Drywall Screws</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="drywallscrews.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >Fine Thread Drywall Screws</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="mb-1">
+                <button
+                  class="btn-toggle-custom collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#desktop-machine"
+                >
+                  <i class="fas fa-chevron-right"></i>
+                  Machine Screws
+                </button>
+                <div class="collapse" id="desktop-machine">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li>
+                      <a
+                        href="machinescrews.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >DIN 965</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="mb-1">
+                <button
+                  class="btn-toggle-custom collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#desktop-clamp"
+                >
+                  <i class="fas fa-chevron-right"></i>
+                  Wire rope Clamp
+                </button>
+                <div class="collapse" id="desktop-clamp">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li>
+                      <a
+                        href="wireropeclamps.html"
+                        class="d-inline-flex text-decoration-none rounded"
+                        >Wire Rope Clamp</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="sidebar-divider"></li>
+
+              <li class="mb-1">
+                <button
+                  class="btn-toggle-custom collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#desktop-contact"
+                >
+                  <i class="fas fa-chevron-right"></i>
+                  <a
+                    href="index.html#contact"
+                    style="color: white; text-decoration: none"
+                    >Contact Us</a
+                  >
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="col-md main-content p-4">
+          <h1 class="mb-4">Self Drilling & Self Tapping Screws</h1>
+
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 product-cards-container"
+          >
+            <!-- Fine Thread -->
+            <div class="col">
+              <div class="card h-100 shadow-sm product-card">
+                <img
+                  src="imgs/drywall-screw-fine-thread.jpg"
+                  class="card-img-top"
+                  alt="Fine Thread"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Pan Head Self Tapping</h5>
+                  <p class="card-text flex-grow-1">
+                    Ideal for metal studs and light-gauge steel framing.
+                  </p>
+                  <div class="table-responsive mb-2">
+                    <table class="table table-striped table-sm mb-0">
+                      <thead>
+                        <tr>
+                          <th>Size</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1/4 x 4</td>
+                        </tr>
+                        <tr>
+                          <td>3/8 x 4</td>
+                        </tr>
+                        <tr>
+                          <td>1/2 x 4</td>
+                        </tr>
+                        <tr>
+                          <td>1/4 x 6</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <a href="#" class="btn btn-primary mt-auto">Details</a>
+                </div>
+              </div>
+            </div>
+            <!-- Fine Thread -->
+            <div class="col">
+              <div class="card h-100 shadow-sm product-card">
+                <img
+                  src="sphinx_img/High-Quality-Truss-Self-Drilling-Screws-4-2-13.webp"
+                  class="card-img-top"
+                  alt="Fine Thread"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Truss Head Self Drilling</h5>
+                  <p class="card-text flex-grow-1">
+                    Ideal for metal studs and light-gauge steel framing.
+                  </p>
+                  <div class="table-responsive mb-2">
+                    <table class="table table-striped table-sm mb-0">
+                      <thead>
+                        <tr>
+                          <th>Size</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>4.2 x 13</td>
+                        </tr>
+                        <tr>
+                          <td>4.2 x 16</td>
+                        </tr>
+                        <tr>
+                          <td>4.2 x 19</td>
+                        </tr>
+                        <tr>
+                          <td>4.2 x 32</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <a href="#" class="btn btn-primary mt-auto">Details</a>
+                </div>
+              </div>
+            </div>
+            <!-- Coarse Thread -->
+            <div class="col">
+              <div class="card h-100 shadow-sm product-card">
+                <img
+                  src="sphinx_img/pan-head-self-drilling-screw.jpg"
+                  class="card-img-top"
+                  alt="Coarse Thread"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Pan Head Self Drillings</h5>
+                  <p class="card-text flex-grow-1">
+                    For wood studs and general construction.
+                  </p>
+                  <div class="table-responsive mb-2">
+                    <table class="table table-striped table-sm mb-0">
+                      <thead>
+                        <tr>
+                          <th>Size</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>4.8 x 13</td>
+                        </tr>
+                        <tr>
+                          <td>4.2 x 13</td>
+                        </tr>
+                        <tr>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <a href="#" class="btn btn-primary mt-auto">Details</a>
+                </div>
+              </div>
+            </div>
+            <!-- Fine Thread -->
+            <div class="col">
+              <div class="card h-100 shadow-sm product-card">
+                <img
+                  src="imgs/drywall-screw-fine-thread.jpg"
+                  class="card-img-top"
+                  alt="Fine Thread"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Pan Head Self Tapping (Black)</h5>
+                  <p class="card-text flex-grow-1">
+                    Ideal for metal studs and light-gauge steel framing.
+                  </p>
+                  <div class="table-responsive mb-2">
+                    <table class="table table-striped table-sm mb-0">
+                      <thead>
+                        <tr>
+                          <th>Size</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>4.8 x 13</td>
+                        </tr>
+                        <tr>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <a href="#" class="btn btn-primary mt-auto">Details</a>
+                </div>
+              </div>
+            </div>
+            <!-- Fine Thread -->
+            <div class="col">
+              <div class="card h-100 shadow-sm product-card">
+                <img
+                  src="imgs/drywall-screw-fine-thread.jpg"
+                  class="card-img-top"
+                  alt="Fine Thread"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Self Drilling Frame Head</h5>
+                  <p class="card-text flex-grow-1">
+                    Ideal for metal studs and light-gauge steel framing.
+                  </p>
+                  <div class="table-responsive mb-2">
+                    <table class="table table-striped table-sm mb-0">
+                      <thead>
+                        <tr>
+                          <th>Size</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>3.5 x 9.5</td>
+                        </tr>
+                        <tr>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <a href="#" class="btn btn-primary mt-auto">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Mobile sidebar functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileSidebarToggle = document.getElementById(
+          "mobileSidebarToggle"
+        );
+        const mobileSidebar = document.getElementById("mobileSidebar");
+        const sidebarOverlay = document.getElementById("sidebarOverlay");
+        const closeSidebar = document.getElementById("closeSidebar");
+
+        // Toggle sidebar on button click
+        mobileSidebarToggle.addEventListener("click", function () {
+          mobileSidebar.classList.toggle("show");
+          sidebarOverlay.classList.toggle("show");
+        });
+
+        // Close sidebar on overlay click
+        sidebarOverlay.addEventListener("click", function () {
+          mobileSidebar.classList.remove("show");
+          sidebarOverlay.classList.remove("show");
+        });
+
+        // Close sidebar on close button click
+        closeSidebar.addEventListener("click", function () {
+          mobileSidebar.classList.remove("show");
+          sidebarOverlay.classList.remove("show");
+        });
+
+        // Close sidebar when clicking on a link (optional)
+        const sidebarLinks = mobileSidebar.querySelectorAll("a");
+        sidebarLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileSidebar.classList.remove("show");
+            sidebarOverlay.classList.remove("show");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
