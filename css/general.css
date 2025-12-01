@@ -1,14 +1,127 @@
-/* --- Global Font Setup --- */
-/* The link is added in the HTML head, so we apply the font here */
+/* general.css */
+
+/* --- Professional Typography System --- */
+:root {
+  --font-primary: "Oswald", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Professional color palette */
+  --color-primary: #2c3e50;
+  --color-secondary: #34495e;
+  --color-accent: #0d6efd;
+  --color-text: #2c3e50;
+  --color-text-light: #7f8c8d;
+}
+
+/* --- Base Typography --- */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.7;
+  color: var(--color-text);
+  letter-spacing: 0.3px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Professional Heading Scale --- */
+h1,
+.h1 {
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+h2,
+.h2 {
+  font-size: 2.75rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  margin-bottom: 1.25rem;
+}
+
+h3,
+.h3 {
+  font-size: 2rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  margin-bottom: 1rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Text Elements --- */
+p {
+  margin-bottom: 1.5rem;
+  font-weight: var(--font-weight-regular);
+  font-size: 1.1rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-light);
+  line-height: 1.6;
+}
+
+.text-secondary {
+  color: var(--color-text-light) !important;
+  font-weight: var(--font-weight-light);
+}
+
+/* --- Component-specific Typography --- */
+.navbar-brand {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  font-weight: var(--font-weight-medium);
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+
+.btn {
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
 /* =========================================================================
-  CAROUSEL STYLES
+   CAROUSEL STYLES
 ========================================================================= */
 
-/* Desktop/Default Styles (Large height) */
 #myCarousel {
   max-height: 80vh;
   overflow: hidden;
@@ -25,16 +138,16 @@ body {
   object-fit: cover;
 }
 
-/* Mobile-Specific Carousel Height: Much Shorter (55vh) */
+/* Mobile-Specific Carousel Height */
 @media (max-width: 768px) {
   #myCarousel,
   #myCarousel .carousel-item {
-    max-height: 55vh; /* Shorter on tablets/phones */
+    max-height: 55vh;
     height: 55vh;
   }
 }
 
-/* Dark Overlay (Pseudo-element) */
+/* Dark Overlay */
 #myCarousel .carousel-item::before {
   content: "";
   display: block;
@@ -43,36 +156,39 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Dark color (black) with 35% transparency (0.35) */
-  background-color: rgba(0, 0, 0, 0.35);
-  /* Place overlay layer (1) above the image (0) */
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
 /* Caption Text Layer */
 #myCarousel .carousel-caption {
-  /* Place caption layer (2) above the overlay (1) to ensure visibility */
   z-index: 2;
-  /* Since Bootstrap handles the positioning, we just need to ensure the z-index is high */
+}
+
+#myCarousel h1 {
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#myCarousel p {
+  font-size: 1.25rem;
+  font-weight: 300;
 }
 
 /* =========================================================================
-  PRODUCT CARD IMAGES & FEATURE STYLES
+   FEATURE BOX STYLES (Why Choose Sphinx)
 ========================================================================= */
 
-/* Default desktop product image height */
-.album .card-img-top {
-  object-fit: cover;
-}
-
 .section-why-title {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
 }
 
 .icon-circle {
   width: 50px;
   height: 50px;
-  background-color: #0d6efd; /* Blue/Primary color */
+  background-color: #0d6efd;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -82,212 +198,563 @@ body {
 }
 
 .icon-circle i {
-  font-size: 24px;
+  font-size: 20px;
 }
 
-.feature-box {
-  background-color: #f8f8f8;
+/* .feature-box {
+  background-color: #ffffff;
   border: 1px solid #e9e9e9;
-  border-radius: 8px;
-  padding: 20px;
-  transition: transform 0.2s;
+  border-radius: 12px;
+  padding: 30px 20px;
   height: 100%;
-}
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
 
-.feature-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+/* STRONG HOVER EFFECT */
+/* .feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #0d6efd;
+  z-index: 10;
+} */
+
+/* --- Section Titles --- */
+.section-why-title {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.5px;
 }
 
 .section-products-title {
-  font-weight: bold;
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.5px;
 }
 
-.card-title {
-  font-weight: bold;
+/* --- Feature Box Text --- */
+.feature-box h5 {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 1rem;
 }
 
-/* ----------------------------------------------- */
-/* ----------------------------------------------- */
+.feature-box p {
+  font-size: 1rem;
+  font-weight: var(--font-weight-light);
+  line-height: 1.6;
+}
+/* =========================================================================
+   PRODUCT CARDS — NOW USING SAME ANIMATION
+========================================================================= */
+
+/* .section-products-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+} */
+
 .product-card {
-  border-radius: 18px;
+  border: 1px solid #e9e9e9; /* Added to match feature box */
+  border-radius: 12px;
   overflow: hidden;
-  transition: all 0.35s ease;
-  cursor: pointer;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* SAME STRONG HOVER AS WHY CHOOSE SPHINX */
 .product-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #0d6efd;
+  z-index: 10;
 }
 
 .product-card img {
-  height: 220px;
+  height: 200px;
   object-fit: cover;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .product-card .card-body {
-  padding: 20px;
+  padding: 24px;
 }
 
 .product-card h5 {
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #212529;
+}
+
+.product-card .card-text {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.5rem;
 }
 
 .product-card .btn {
   border-radius: 50px;
-  padding: 5px 18px;
+  padding: 8px 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
 }
 
 /* =========================================================================
-  ABOUT US SECTION (Gallery transitions removed)
+   ABOUT US SECTION
 ========================================================================= */
+
 .about {
-  padding: 80px 20px;
-  grid-template-columns: 1fr 2fr; /* Desktop: Text (1) | Gallery (2) */
-  gap: 40px;
-  align-items: center;
-  margin: 0 30px;
+  padding: 80px 0;
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.about-content-wrapper {
+  padding: 0 20px;
 }
 
 .about h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  margin-bottom: 25px;
+  color: #212529;
 }
 
 .about p {
-  line-height: 1.6;
+  font-size: 1.05rem;
   color: #555;
-  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .about-gallery {
-  grid-template-columns: repeat(3, 1fr); /* Default: 3 Columns */
-  grid-gap: 15px;
-  width: 100%;
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .about-gallery img {
   width: 100%;
-  height: 180px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 5px;
-  /* Gallery transition and rotation removed */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  will-change: transform;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-/* ADJUSTED: Simplified hover effect - minimal zoom and clean shadow */
 .about-gallery img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  z-index: 5;
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* --------------------- CONTACT SECTION --------------------- */
+
 #contact {
-  background: #2b2f32;
+  background: #212529;
   color: white;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
+}
+
+.contact-header {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.contact-text {
+  color: #aaa;
+  margin-bottom: 2.5rem;
 }
 
 .contact-details {
   list-style: none;
-  margin-top: 2rem;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .contact-details li {
-  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
 }
 
 .contact-details a {
-  color: #f5f5f5;
+  color: #f8f9fa;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .contact-details a:hover {
-  color: #c0c0c0;
+  color: #0d6efd;
 }
 
-/* -------------------------------------------- */
-
 /* =========================================================================
-  MEDIA QUERIES - MOBILE RESPONSIVENESS (SIZING & LAYOUT)
+   MEDIA QUERIES
 ========================================================================= */
 
-/* Tablet/Small Desktop: Text column stacks on top of gallery column */
 @media (max-width: 992px) {
   .about {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 40px;
+  }
+
+  .about-content-wrapper {
+    text-align: center;
+  }
+
+  .about h2 {
+    text-align: center !important;
   }
 }
 
-/* Mobile Screens (Sizing adjustments for phones < 576px) */
 @media (max-width: 576px) {
-  /* 1. PRODUCT CARDS - Smaller Image Height */
-  .album .card-img-top {
-    height: 200px;
+  #myCarousel h1 {
+    font-size: 2rem;
+  }
+
+  #myCarousel p {
+    font-size: 1rem;
   }
 
   .section-why-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
-  /* 2. WHY CHOOSE ICONS - Smaller Size */
-  .icon-circle {
-    width: 40px; /* Size of the circle */
-    height: 40px;
-  }
-
-  /* FIXED: Reduced Font Awesome icon size */
-  .icon-circle i {
-    font-size: 18px; /* Reduced from 24px */
-  }
-
-  /* Less padding on the feature box */
   .feature-box {
-    padding: 15px;
+    padding: 20px;
   }
 
-  /* 3. PRODUCT BUTTON/PRICE BAR FIX */
-  .card-body .d-flex {
-    flex-wrap: nowrap;
-    gap: 5px;
-  }
-
-  .card-body .btn-group {
-    flex-shrink: 1;
-  }
-
-  .card-body .btn-group .btn {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.4rem;
-  }
-
-  .card-body strong.text-success {
-    font-size: 0.8rem;
-
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  /* ABOUT US GALLERY - Enforces 2-column layout on small screens */
   .about-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .card-text {
-    font-size: 0.7rem;
+  .contact-details {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
   }
-  .card-title {
-    font-weight: bold;
-    font-size: 0.9rem;
+}
+
+/* -------------------------------------------------- */
+
+/* --- Responsive Typography --- */
+@media (max-width: 768px) {
+  h1,
+  .h1 {
+    font-size: 2.5rem;
   }
+  h2,
+  .h2 {
+    font-size: 2rem;
+  }
+  h3,
+  .h3 {
+    font-size: 1.75rem;
+  }
+
+  .carousel-caption h1 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.1rem;
+  }
+
+  .section-why-title,
+  .section-products-title {
+    font-size: 2.25rem;
+  }
+
+  .about h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1,
+  .h1 {
+    font-size: 2rem;
+  }
+  h2,
+  .h2 {
+    font-size: 1.75rem;
+  }
+
+  .section-why-title,
+  .section-products-title {
+    font-size: 1.75rem;
+  }
+}
+
+.more-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #0d6efd;
+  color: #fff;
+  border-radius: 0.375rem;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+  text-align: center;
+}
+
+.more-link:hover {
+  background: #0b5ed7;
+}
+
+/* ------------------------------------------------ */
+/* ------------------------------------------------ */
+/* styles of product pages */
+/* ------------------------------------------------ */
+/* ------------------------------------------------ */
+
+:root {
+  --sidebar-bg: #212529;
+  --link-color: #f8f9fa;
+  --border-color: #495057;
+  --toggle-bg-hover: #343a40;
+}
+
+body {
+  padding-top: 56px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Sidebar styles */
+.custom-sidebar {
+  width: 280px;
+  background-color: var(--sidebar-bg);
+  color: var(--link-color);
+  padding: 1rem;
+  overflow-y: auto;
+  height: calc(100vh - 56px);
+}
+
+/* Mobile sidebar - offcanvas style */
+@media (max-width: 767.98px) {
+  .custom-sidebar-wrapper {
+    display: none;
+  }
+
+  .mobile-sidebar {
+    position: fixed;
+    top: 56px;
+    left: -280px;
+    width: 280px;
+    height: calc(100vh - 56px);
+    background-color: var(--sidebar-bg);
+    z-index: 1050;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+
+  .mobile-sidebar.show {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  /* Overlay when sidebar is open */
+  .sidebar-overlay {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    display: none;
+  }
+
+  .sidebar-overlay.show {
+    display: block;
+  }
+}
+
+/* Desktop sidebar */
+@media (min-width: 768px) {
+  .custom-sidebar-wrapper {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .main-content {
+    margin-left: 280px;
+  }
+
+  .mobile-sidebar {
+    display: none;
+  }
+
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
+
+.sidebar-header {
+  color: var(--link-color) !important;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.btn-toggle-custom {
+  width: 100%;
+  text-align: left;
+  color: var(--link-color);
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.btn-toggle-custom:hover,
+.btn-toggle-custom:focus {
+  background-color: var(--toggle-bg-hover);
+  color: var(--link-color);
+  outline: none;
+}
+
+.btn-toggle-custom i.fa-chevron-right {
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-toggle-custom:not(.collapsed) i.fa-chevron-right {
+  transform: rotate(90deg);
+}
+
+.btn-toggle-nav li a {
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.25rem 0.5rem;
+  padding-left: 2rem;
+}
+
+.btn-toggle-nav li a:hover {
+  color: var(--link-color);
+}
+
+.sidebar-divider {
+  border-top: 1px solid var(--border-color);
+  margin: 1rem 0;
+}
+
+/* Product cards */
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card {
+  height: 100%;
+}
+
+/* Mobile product layout */
+@media (max-width: 767.98px) {
+  .product-cards-container {
+    row-cols: 2 !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .product-cards-container {
+    row-cols: 1 !important;
+  }
+}
+
+/* Mobile navbar with sidebar integration */
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+}
+
+/* Logo styling */
+.logo-placeholder {
+  width: 50px;
+  height: 50px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-placeholder img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ----------------------------------------- */
+/* hide empty tr  */
+/* ----------------------------------------- */
+.empty-row td {
+  color: transparent;
+}
+
+/* Remove the row completely on mobile */
+@media (max-width: 576px) {
+  .empty-row {
+    display: none;
+  }
+}
+
+/* ------------------------ */
+/* MOBILE SIDEBAR LINK BLUE FIXED */
+/* ------------------------ */
+/* Mobile sidebar links */
+.mobile-sidebar a {
+  color: var(--link-color); /* white */
+  text-decoration: none; /* remove underline */
+}
+
+/* Optional: hover effect */
+.mobile-sidebar a:hover {
+  color: #ffffff; /* stays white on hover */
+  text-decoration: none;
+}
+/* ---------------------- */
+/* GO BACK BUTTON  */
+/* --------------------- */
+.go-back-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #343a40;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.go-back-icon:hover {
+  background-color: #495057;
 }
