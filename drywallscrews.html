@@ -12,7 +12,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/general.css" />
   </head>
   <body>
     <header>
@@ -28,9 +33,8 @@
               class="me-2"
             />
             <!-- </div> -->
-            <a class="navbar-brand" href="#">Sphinx</a>
+            <a class="navbar-brand" href="index.html">Sphinx Fasteners</a>
           </div>
-
           <!-- Mobile sidebar toggle button -->
           <button
             class="navbar-toggler d-md-none"
@@ -39,7 +43,6 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <!-- Desktop navigation -->
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -49,14 +52,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Products</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact Us</a>
               </li>
             </ul>
-
             <!-- Search form - shown on all screens -->
             <form class="d-flex" role="search">
               <input
@@ -72,23 +72,30 @@
         </div>
       </nav>
     </header>
-
     <!-- Mobile Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
     <!-- Mobile Sidebar -->
     <div class="mobile-sidebar" id="mobileSidebar">
       <div class="d-flex justify-content-between align-items-center mb-3">
-        <h5 class="text-white mb-0">
-          <a href="products.html">Our Products</a>
-        </h5>
+        <div class="d-flex align-items-center">
+          <!-- Go Back Button -->
+          <button class="go-back-icon me-2" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+
+          <h5 class="text-white mb-0">
+            <a href="products.html" class="text-white text-decoration-none"
+              >Our Products</a
+            >
+          </h5>
+        </div>
+
         <button
           type="button"
           class="btn-close btn-close-white"
           id="closeSidebar"
         ></button>
       </div>
-
       <ul class="list-unstyled ps-0 mb-0">
         <li class="mb-1">
           <button
@@ -96,8 +103,7 @@
             data-bs-toggle="collapse"
             data-bs-target="#mobile-anchors"
           >
-            <i class="fas fa-chevron-right"></i>
-            Anchors
+            <i class="fas fa-chevron-right"></i> Anchors
           </button>
           <div class="collapse" id="mobile-anchors">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -125,7 +131,6 @@
             </ul>
           </div>
         </li>
-
         <li class="mb-1">
           <button
             class="btn-toggle-custom collapsed"
@@ -322,7 +327,6 @@
         </li>
       </ul>
     </div>
-
     <div class="container-fluid">
       <div class="row">
         <!-- Desktop Sidebar - hidden on mobile -->
@@ -334,7 +338,6 @@
             >
               <span class="fs-5 fw-semibold">Our Products</span>
             </a>
-
             <ul class="list-unstyled ps-0">
               <li class="mb-1">
                 <button
@@ -342,8 +345,7 @@
                   data-bs-toggle="collapse"
                   data-bs-target="#desktop-anchors"
                 >
-                  <i class="fas fa-chevron-right"></i>
-                  Anchors
+                  <i class="fas fa-chevron-right"></i> Anchors
                 </button>
                 <div class="collapse" id="desktop-anchors">
                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -371,15 +373,13 @@
                   </ul>
                 </div>
               </li>
-
               <li class="mb-1">
                 <button
                   class="btn-toggle-custom collapsed"
                   data-bs-toggle="collapse"
                   data-bs-target="#desktop-nuts"
                 >
-                  <i class="fas fa-chevron-right"></i>
-                  Nuts
+                  <i class="fas fa-chevron-right"></i> Nuts
                 </button>
                 <div class="collapse" id="desktop-nuts">
                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -414,15 +414,13 @@
                   </ul>
                 </div>
               </li>
-
               <li class="mb-1">
                 <button
                   class="btn-toggle-custom collapsed"
                   data-bs-toggle="collapse"
                   data-bs-target="#desktop-washers"
                 >
-                  <i class="fas fa-chevron-right"></i>
-                  Washers
+                  <i class="fas fa-chevron-right"></i> Washers
                 </button>
                 <div class="collapse" id="desktop-washers">
                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -436,15 +434,13 @@
                   </ul>
                 </div>
               </li>
-
               <li class="mb-1">
                 <button
                   class="btn-toggle-custom collapsed"
                   data-bs-toggle="collapse"
                   data-bs-target="#desktop-wood-screws"
                 >
-                  <i class="fas fa-chevron-right"></i>
-                  Wood Screws
+                  <i class="fas fa-chevron-right"></i> Wood Screws
                 </button>
                 <div class="collapse" id="desktop-wood-screws">
                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -465,7 +461,6 @@
                   </ul>
                 </div>
               </li>
-
               <li class="mb-1">
                 <button
                   class="btn-toggle-custom collapsed"
@@ -479,7 +474,7 @@
                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li>
                       <a
-                        href="#"
+                        href="selfscrews.html"
                         class="d-inline-flex text-decoration-none rounded"
                         >Pan Head Self-Drilling</a
                       >
@@ -515,15 +510,13 @@
                   </ul>
                 </div>
               </li>
-
               <li class="mb-1">
                 <button
                   class="btn-toggle-custom collapsed"
                   data-bs-toggle="collapse"
                   data-bs-target="#desktop-machine"
                 >
-                  <i class="fas fa-chevron-right"></i>
-                  Machine Screws
+                  <i class="fas fa-chevron-right"></i> Machine Screws
                 </button>
                 <div class="collapse" id="desktop-machine">
                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -537,15 +530,13 @@
                   </ul>
                 </div>
               </li>
-
               <li class="mb-1">
                 <button
                   class="btn-toggle-custom collapsed"
                   data-bs-toggle="collapse"
                   data-bs-target="#desktop-clamp"
                 >
-                  <i class="fas fa-chevron-right"></i>
-                  Wire rope Clamp
+                  <i class="fas fa-chevron-right"></i> Wire rope Clamp
                 </button>
                 <div class="collapse" id="desktop-clamp">
                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -559,9 +550,7 @@
                   </ul>
                 </div>
               </li>
-
               <li class="sidebar-divider"></li>
-
               <li class="mb-1">
                 <button
                   class="btn-toggle-custom collapsed"
@@ -579,11 +568,9 @@
             </ul>
           </div>
         </div>
-
         <!-- Main Content -->
         <main class="col-md main-content p-4">
           <h1 class="mb-4">Drywall Screws</h1>
-
           <div
             class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 product-cards-container"
           >
@@ -629,11 +616,15 @@
                       </tbody>
                     </table>
                   </div>
-                  <a href="#" class="btn btn-primary mt-auto">Details</a>
+                  <a
+                    href="https://www.facebook.com/messages/t/239430865917696"
+                    target="_blank"
+                    class="btn btn-primary mt-auto"
+                    >Request Quote</a
+                  >
                 </div>
               </div>
             </div>
-
             <!-- Fine Thread -->
             <div class="col">
               <div class="card h-100 shadow-sm product-card">
@@ -662,21 +653,26 @@
                           <td>3.5 x 35 mm</td>
                         </tr>
                         <tr>
-                          <td>-</td>
+                          <td class="empty-row">-</td>
                         </tr>
                         <tr>
-                          <td>-</td>
+                          <td class="empty-row">-</td>
                         </tr>
                         <tr>
-                          <td>-</td>
+                          <td class="empty-row">-</td>
                         </tr>
                         <tr>
-                          <td>-</td>
+                          <td class="empty-row">-</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                  <a href="#" class="btn btn-primary mt-auto">Details</a>
+                  <a
+                    href="https://www.facebook.com/messages/t/239430865917696"
+                    target="_blank"
+                    class="btn btn-primary mt-auto"
+                    >Request Quote</a
+                  >
                 </div>
               </div>
             </div>
@@ -684,7 +680,6 @@
         </main>
       </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // Mobile sidebar functionality
@@ -726,3 +721,4 @@
     </script>
   </body>
 </html>
+<!-- end drywallscrews.html -->
